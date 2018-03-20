@@ -1,0 +1,9 @@
+<div id="create" style="display:none">
+  <h3> Новая задача </h3>
+<%= form_with scope: :todo, id: "create_form" do |f| %>
+<%= f.text_field :text, placeholder: 'Название задачи...' %>
+<br><%= f.select( :project_id, options_from_collection_for_select(Project.all, :id, :title)) %>
+<br><%= link_to "ОТМЕНА", "#", id: "dismiss_create" %>
+<%= link_to "OK", "#", id: "save_form" %>
+<% end %>
+</div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
   resources :todo
+
+  root 'todo#index'
 
   get 'todo/index'
 
@@ -8,5 +9,4 @@ Rails.application.routes.draw do
 
   post 'todo/create'
 
-  root 'todo#index'
 end
