@@ -13,6 +13,7 @@ class TodoController < ApplicationController
     @todo = Todo.new(params_add)
     @todo.isCompleted = false
     @todo.save
+    redirect_to(root_path)
   end
 end
 
