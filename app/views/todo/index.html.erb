@@ -1,17 +1,39 @@
-<div id="header">
-  <h1>Задачи</h1>
-  <h1><%= link_to "+", "#", id: "show_create" %></h1>
-</div>
-<div id="todos">
-<% @project.each { |value| %>
-  <h3><%= value.title %></h3>
-  <ul>
-    <% value.todos.each { |value| %>
-      <li> <%= value.text %> </li>
-      <% } %>
+<nav class="navbar justify-content-end navbar-dark bg-primary">
 
-  </ul>
-<% } %>
+  <div class="navbar-brand h1">
+    Задачи
+  </div>
+  <div class="nav-link">
+    <a class="btn btn-lg create-button", data-toggle="modal" data-target="#create-box-1" style="background-color:transparent; border-style: hidden; font-size: 3.5em; font-weight: 300; color: #fff">+</a>
+  </div>
+
+</nav>
+
+<div class="container-fluid">
+  <div class="row justify-content-start">
+
+    <% @project.each { |value| %>
+      <div class="card bg-transparent col-lg-4 col-md-6 col-12">
+        <div class="todo_box">
+          <div class="card-header border-light">
+            <div class="todo_title">
+              <h3><%= value.title %></h3>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <% value.todos.order(:id).each { |value| %>
+              <div class "todo_item">
+              <%= check_box_tag value.id, value.isCompleted, value.isCompleted %>
+              <%= label_tag value.id, value.text %><br>
+            </div>
+            <% } %>
+
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
 </div>
 
 <%= render 'create' %>

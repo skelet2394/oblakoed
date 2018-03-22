@@ -7,17 +7,20 @@ class TodoController < ApplicationController
   end
 
   def update
+    @todo = Todo.find(params[:domid])
+    @todo.isCompleted = !@todo.isCompleted
+    @todo.save
   end
 
   def create
+
     @todo = Todo.new(params_add)
-    @todo.isCompleted = false
     @todo.save
     redirect_to(root_path)
   end
 end
 
 private
- def params_add
-   params.require(:todo).permit(:text, :project_id)
- end
+def params_add
+  params.require(:todo).permit(:text, :project_id)
+end

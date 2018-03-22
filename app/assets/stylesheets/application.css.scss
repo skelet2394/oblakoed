@@ -1,0 +1,263 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require vendor/bootstrap-grid.min.css
+ *= require vendor/bootstrap.min.css
+ *= require select2
+ *= require select2-bootstrap
+ *= require_tree .
+ *= require_self
+ */
+//
+// GENERAL
+//
+@import 'icheck/square/blue';
+$oblakoblue: #3aafda;
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Open Sans';
+}
+
+body h3 {
+  font-size: 0.8em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: font-url('OpenSans-Light') format('truetype');
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: font-url('OpenSans-Regular') format('truetype');
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: font-url('OpenSans-Semibold') format('truetype');
+}
+
+body {
+  // Extra small devices (portrait phones, less than 576px)
+  // @media (max-width: 575.98px) {
+  //   font-size: 0.6em;
+  // }
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 767.98px) {
+    font-size: 0.7em;
+  }
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    font-size: 0.8em;
+  }
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    font-size: 0.8em;
+  }
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    font-size: 0.9em;
+  }
+}
+//
+// NAVIGATION BAR
+//
+
+.navbar {
+  height: 5em;
+  margin-bottom: 3em;
+  background-color: $oblakoblue !important;
+}
+
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  height: 2em;
+  font-weight: 200;
+}
+
+.nav-link {
+  z-index: 9;
+}
+//
+// CARDS
+//
+
+
+.todo_box {
+
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.2);
+}
+.card {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 2.5em;
+}
+.card-header {
+  padding-top: 1.5em;
+  background-color: white;
+font-size: 1.2em;
+font-weight: bold;
+}
+
+.card-body {
+  font-weight: 300;
+  line-height: 3em;
+}
+
+.icheckbox_square-blue {
+  vertical-align: middle;
+  margin-right: 1em;
+  top: -1px;
+}
+
+.todo_item label {
+  display: block;
+  vertical-align: middle;
+  margin-left: 50px;
+}
+
+
+
+.checked+label {
+  text-decoration: line-through;
+}
+//
+//  MODAL WINDOW
+//
+.modal-header .title {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px;
+  border-color: black;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.modal-body .container {
+  align-content: stretch;
+}
+//
+// TEXTFIELD
+//
+
+input[type="text"] {
+  width: 100%;
+  height: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+//
+// DROPDOWN LIST
+//
+
+.create-box .dropdown-container {
+  margin: 10px;
+}
+
+.create-box .dropdown {
+  width: 100%;
+}
+
+.select2-selection,
+.select2-selection__arrow,
+.select2-selection__rendered {
+  height: 3em !important;
+
+  span {
+    line-height: 3em !important;
+    text-align: left;
+  }
+}
+
+.select2-selection {
+  border-radius: 0 !important;
+}
+
+.select2-dropdown {
+  position: relative;
+  z-index: 10000;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-selection__rendered {
+  padding-left: 1em !important;
+}
+
+.select2-container--open {
+  line-height: 3em !important;
+}
+
+.select2-search {
+  display: none;
+}
+//
+// BUTTONS
+//
+
+.modal-footer .btn {
+  border-radius: 0;
+  padding-top: 8px;
+  margin: 0 5px 5px;
+  padding-bottom: 8px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.8em;
+  height: auto;
+}
+
+.modal-footer .save {
+  background-color: $oblakoblue;
+}
+
+.modal-footer .dismiss {
+  background-color: #9f9f9f;
+}
+
+.modal-footer .p-2 {
+  padding: 0 10px 10px;
+}
+
+#dismiss_create {
+  color: #fff;
+}
+
+#save_form {
+  color: #fff;
+}

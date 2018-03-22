@@ -1,9 +1,27 @@
-<div id="create" style="display:none">
-  <h3> Новая задача </h3>
-<%= form_with scope: :todo, id: "create_form" do |f| %>
-<%= f.text_field :text, placeholder: 'Название задачи...' %>
-<br><%= f.select( :project_id, options_from_collection_for_select(Project.all, :id, :title)) %>
-<br><%= link_to "ОТМЕНА", "#", id: "dismiss_create" %>
-<%= link_to "OK", "#", id: "save_form" %>
-<% end %>
+<div class="modal fade" role="dialog" id="create-box-1" style="display:none">
+  <div class="row modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class"modal-title">
+          <h3>Новая задача</h3>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container d-flex flex-column">
+          <div class="p-2 form">
+            <%= form_with scope: :todo, id: "create_form" do |f| %>
+            <%= f.text_field :text, placeholder: 'Название задачи...' %>
+          </div>
+          <div class="p-2 dropdown-container">
+            <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :title), {}, {class:"dropdown"} %>
+            <%end%>
+          </div>
+          <div class="p-2 px-2 buttons row modal-footer", style="padding: 10px 18px !important">
+            <button type="button" class="btn col dismiss", data-dismiss="modal">ОТМЕНА</button>
+            <button type="button" class="btn col save", id="save_form" >OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
